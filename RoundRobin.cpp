@@ -1,9 +1,12 @@
 #include <iostream>
 #include <stdio.h>
+#include <string>
 
 struct process{
   int burst = 0;
   int arrival = 0;
+  int waitTime = 0;
+  std::string waitList = "";
 };
 
 int main(){
@@ -41,6 +44,8 @@ int main(){
             
             //calculate total waitTime = (start time - arrival time) 
             totalWaitTime += (procTime - proc[i].arrival);
+            proc[i].waitTime += (procTime - proc[i].arrival);
+            proc[i].waitList += std::to_string(procTime - proc[i].arrival) + ", ";
             
             //passage of time after acting on a process
             //adds burst time if burst time is less than quantum
@@ -69,6 +74,11 @@ int main(){
     }
     
     double averageWaitTime = (double) totalWaitTime/procCount;
+    for (int i = 0; i < procCount; i++){
+    	std::cout << "proc[" << i+1 << "].waitTime = " << proc[i].waitTime << std::endl;
+    	std::cout << "proc[" << i+1 << "].waitList = " << proc[i].waitList << std::endl;
+    	std::cout << std::endl;
+    }
     std::cout << "AVERAGE WAIT TIME =" << averageWaitTime << std::endl;
     return 0;
 }
