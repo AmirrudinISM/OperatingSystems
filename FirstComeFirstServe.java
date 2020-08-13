@@ -1,5 +1,14 @@
 import java.util.Scanner;  // Import the Scanner class
 
+class Process{
+	public int procID;
+	public int burst;
+	public int arrival;
+	public int waitTime;
+	String waitTimeList;
+
+};
+
 class FirstComeFirstServe{
 	public static void main(String[] args) {
     	int procCount = 0;
@@ -47,14 +56,4 @@ class FirstComeFirstServe{
     	System.out.println("AVERAGE WAIT TIME = " + totalWaitTime + "/" + procCount);
     	System.out.println("AVERAGE WAIT TIME = " + averageWaitTime);
   	}
-}
-
-class Process{
-	public int procID;
-	public int burst;
-	public int arrival;
-	public int waitTime;
-	String waitTimeList;
-
 };
-
