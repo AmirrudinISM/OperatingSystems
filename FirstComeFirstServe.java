@@ -1,4 +1,4 @@
-import java.util.Scanner;  // Import the Scanner class
+import java.util.Scanner;
 
 class Process{
 	public int procID;
@@ -31,8 +31,8 @@ class FirstComeFirstServe{
     	int procTime = 0;
 
     	//FCFS begins
+    	System.out.println("===========================================================");
     	System.out.println("Proc | Burst  | Arrival | Start | Complete | waitTime |");
-
     	for (int i = 0; i < procCount; i++){
     		System.out.print("[" + proc[i].procID +"]  |   " + proc[i].burst + "   |   "+ proc[i].arrival + "     |   "+procTime);
     		//wait time for current process
