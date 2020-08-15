@@ -75,7 +75,7 @@ int main(){
             	proc[i].burst = 0;
             }
 
-            std::cout << "   |   " << procTime << "      |     " << proc[i].waitTime << "    |     " << proc[i].burst << std::endl;
+            std::cout << "   |   " << procTime << "      |     " << waitTime << "    |     " << proc[i].burst << std::endl;
             
             //check if process is complete
             if (proc[i].burst <= 0){

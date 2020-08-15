@@ -54,7 +54,7 @@ class RoundRobin{
         while(completionCount < procCount){
             //a process is still not done
             if (proc[i].burst > 0){
-
+                //display state of process state & main timeline BEFORE a process is carried out
                 System.out.print("[" + proc[i].procID +"]  |   " + proc[i].burst + "   |   "+ proc[i].arrival + "     |   "+procTime); 
                 
                 //calculate waitTime = (start time - arrival time) 
@@ -92,8 +92,8 @@ class RoundRobin{
                 else{
                     proc[i].burst = 0;
                 }
-
-                System.out.println("   |   " + procTime + "      |     " + proc[i].waitTime + "    |     " + proc[i].burst);
+                //display state of process state & main timeline AFTER a process is carried out
+                System.out.println("   |   " + procTime + "      |     " + waitTime + "    |     " + proc[i].burst);
                 
                 //check if process is complete
                 if (proc[i].burst == 0){

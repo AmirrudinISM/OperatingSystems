@@ -37,10 +37,10 @@ class SimpleRoundRobin{
         while(completionCount < procCount){
             //a process is still not done
             if (burst[i] > 0){
-                //calculate waitTime = (start - arrival), then addto the process's total wait time
                 //Timeline = START
+                //calculate waitTime = (start - arrival), then add to the process's total wait time
                 totalWaitTime += (timeLine - arrival[i]);
-                
+                            
                 //passage of time after acting on a process
                 //adds burst time if burst time is less than quantum
                 //adds quantum time instead if burst value is greater, so that every task is treated equally
@@ -57,12 +57,15 @@ class SimpleRoundRobin{
                 arrival[i] = timeLine;
                 
                 //process has been carried out
-                burst[i] -= quantum;        
+                burst[i] -= quantum;
+                
+                //increase if process is complete
+                //needs to be inside while so that the counter doesn't increase when the loop checks an already completed process again 
+                if(burst[i] <= 0){
+                    completionCount++;
+                }   
             }
-            //process is complete
-            else if(burst[i] <= 0){
-                completionCount++;
-            }
+
             //the cycle counter
             i++;
             i = (i % procCount);
