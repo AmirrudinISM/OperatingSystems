@@ -1,5 +1,8 @@
 import java.util.Scanner;
-
+/*
+This is a simple implementation of the Round-robin scheduling algorithm.
+Only displays the total wait time of all processes and the average wait time.
+*/
 class SimpleRoundRobin{
 	public static void main(String[] args) {
     	int procCount = 0;
