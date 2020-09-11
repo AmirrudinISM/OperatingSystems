@@ -15,11 +15,11 @@ class MemoryBlock{
 
 class MemoryManagement{
 	public static void main(String[] args) {
-    	
+    	Scanner input = new Scanner(System.in);
 		int procCount = 0;
     	//get number of processes
     	System.out.print("Enter number of processes: ");
-    	procCount = new Scanner(System.in).nextInt();
+    	procCount = input.nextInt();
     	//initialize process
     	Process [] processInst = new Process[procCount];
     	
@@ -27,20 +27,20 @@ class MemoryManagement{
     		processInst[i] = new Process();
     		processInst[i].procID = i+1;
     		System.out.print("Please enter size for proc["+processInst[i].procID+"]: ");
-    		processInst[i].size = new Scanner(System.in).nextInt();
+    		processInst[i].size = input.nextInt();
     	}
 
     	int blockCount = 0;
     	//get number of memory blocks
     	System.out.print("Enter number of memory blocks: ");
-    	blockCount = new Scanner(System.in).nextInt();
+    	blockCount = input.nextInt();
     	//initialize memory blocks
     	MemoryBlock [] memoryBlockInst = new MemoryBlock[blockCount];
 
     	for (int i = 0; i < blockCount; i++){
     		memoryBlockInst[i] = new MemoryBlock();
     		System.out.print("Please enter size for memBlock["+(i+1)+"]: ");
-    		memoryBlockInst[i].size = new Scanner(System.in).nextInt();
+    		memoryBlockInst[i].size = input.nextInt();
     		memoryBlockInst[i].processList = new ArrayList<Process>();
     	}
 
@@ -59,8 +59,8 @@ class MemoryManagement{
 					//push the process into memory block
 					memoryBlockInst[j].processList.add(processInst[i]); 
 					
-					//breaks out of loop for checking every memory block as process has been allocated
-					//and moves on to the next process
+					//breaks out of loop of checking every memory block as process has been allocated
+					//and can now move on to the next process
 					break;
 				}
 			}
@@ -105,6 +105,8 @@ class MemoryManagement{
 				System.out.println("processInst["+processInst[i].procID+"]");
 			}
 		}
+
+		input.close();
 	}
 
 };
