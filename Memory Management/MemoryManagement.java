@@ -129,10 +129,14 @@ class MemoryManagement{
 
 	public static ArrayList<Process> nextFit(Process [] inpProc, int procNum, MemoryBlock [] inpMemBlock, int blockNum){
 		//Implement Next Fit
+		ArrayList <Process> localPartition = new ArrayList<Process>();
+		return localPartition;
 	}
 
 	public static ArrayList<Process> bestFit(Process [] inpProc, int procNum, MemoryBlock [] inpMemBlock, int blockNum){
 		//Implement Best Fit
+		ArrayList <Process> localPartition = new ArrayList<Process>();
+		return localPartition;
 	}
 
 	public static void printPartition(ArrayList <Process> inputList){
