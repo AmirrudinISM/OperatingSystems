@@ -42,14 +42,18 @@ class MemoryManagement{
     	System.out.println("Allocation methods:\n 1. First Fit\n 2. Next Fit \n 3. Best Fit ");
     	System.out.println("Select method: ");
     	int selection = input.nextInt();
+    	System.out.println("========================================");
     	switch(selection){
     		case 1:
+    			System.out.println("                FIRST-FIT               ");
     			memoryBlockInst = firstFit(processInst, procCount, memoryBlockInst, blockCount);
     			break;
     		case 2:
+    			System.out.println("                NEXT-FIT                ");
     			memoryBlockInst = nextFit(processInst, procCount, memoryBlockInst, blockCount);
     			break;
     		case 3:
+    			System.out.println("                BEST-FIT                ");
     			memoryBlockInst = bestFit(processInst, procCount, memoryBlockInst, blockCount);
     			break;
     		default:
