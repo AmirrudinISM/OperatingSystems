@@ -24,13 +24,13 @@ class MemoryBlock{
 class MemoryManagement{
 	public static void main(String[] args) {
     	Scanner input = new Scanner(System.in);
-		
+
 		//creates processes & prompts for size of each process
 		int procCount = 0;
-    	System.out.println("Enter number of processes: ");
-    	procCount = input.nextInt();
-    	Process [] processInst = processInitializer(procCount, input);
-    	
+		System.out.println("Enter number of processes: ");
+		procCount = input.nextInt();
+		Process [] processInst = processInitializer(procCount, input);
+
     	//creates memory blocks & prompts size of each memory block
     	int blockCount = 0;
     	System.out.println("Enter number of memory blocks: ");
@@ -72,7 +72,7 @@ class MemoryManagement{
 	}
 
 	public static Process [] processInitializer(int count, Scanner inp){
-    	Process [] localProcess = new Process[count];
+		Process [] localProcess = new Process[count];
     	
     	for (int i = 0; i < count; i++){
     		localProcess[i] = new Process();
@@ -167,8 +167,12 @@ class MemoryManagement{
 		int currSize = 0;
 		//for every process
 		for (int i = 0; i < procNum; i++){
-			//reset the min value every time we move on to next process 
-			//so that we can keep track of new minSize
+			/*
+				-reset the min value every time we move on to next process 
+					so that we can keep track of new minSize. 
+				-minSize will always be initialized with a large number
+					so that different sizes are stored properly
+			*/
 			minSize = Integer.MAX_VALUE;
 			//every memory block
 			for (int j = 0; j < blockNum; j++){
